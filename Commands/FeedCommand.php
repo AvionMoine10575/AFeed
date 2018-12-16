@@ -6,7 +6,7 @@ use pocketmine\Server;
 use pocketmine\Player;
 use pocketmine\utils\TextFormat as TX;
 class FeedCommand extends Command {
-	private $prefix = "[AFeed] ";
+	private $prefix = "[§6A§aFeed] ";
 public function __construct(string $name){
 		parent::__construct(
 			$name,
@@ -17,15 +17,15 @@ public function __construct(string $name){
 	}
   public function execute(CommandSender $sender, $command, array $args){
 		$usages = "/feed";
-		if(!$sender->isGuest()){
-    return $sender->sendMessage(TX::RED.$this->prefix."Error: ".TX::RESET."You don't have the permission to use the command!");
+		if(!$sender->isOp()){
+    return $sender->sendMessage(TX::RED.$this->prefix."Error: ".TX::YELLOW."You don't have the permission to use the command!");
     }
     if(!$sender instanceof Player){
     return $sender->sendMessage(TX::RED.$this->prefix."You are not a player, you can't feed yourself!");
     }
     $maxfood = $sender->getMaxFood();
     $sender->setFood($maxfood);
-    $sender->sendMessage("You have been feeded!");
+    $sender->sendMessage(TX::RED.$this->prefix.("You have been feeded!");
     return true;
    }
    }
