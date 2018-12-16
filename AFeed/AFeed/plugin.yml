@@ -1,0 +1,10 @@
+name: AFeed
+author: AvionMoine10575
+main: AFeed\Main
+version: 1.0.0
+api: 3.0.0
+description: "Feed yourself with 1 simple command!"
+
+commands:
+  Feed:
+  description: "Feed yourself with 1 simple command!"
